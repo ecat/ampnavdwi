@@ -1,0 +1,11 @@
+Code and data for paper
+
+
+1. Create docker container using provided Dockerfile. Most convenient is to use VSCode with DevContainers extensions
+2. Use jupytext to convert main.py to a notebook
+
+>> jupytext --to ipynb main.py
+
+3. Run the code and change the loaded data directory if desired
+
+Data is available at 
