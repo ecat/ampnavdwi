@@ -100,7 +100,6 @@ class PathManager:
     
 class EntryPoint(Enum):
     MAIN = 'main.py'
-    RECON = 'recon.py'
 
 def id_generator(seed, size=6, chars=string.ascii_uppercase + string.digits):
     random.seed(seed)
@@ -114,3 +113,21 @@ def remove(path):
         shutil.rmtree(path)  # remove dir and all contains
     else:
         warnings.warn('file {} is not a file or dir.'.format(path))      
+
+def launch_recon(entry_point, data_dir, command_line_args, device_id, do_wet, extra_args=None, out_dir=None):
+
+    data_dir_arg = ' --data-dir ' + data_dir
+
+    cmd = 'python3 ' + entry_point.value + data_dir_arg + command_line_args + ' --device ' + str(device_id) 
+
+    if out_dir is not None:
+        cmd = cmd + ' --out-dir ' + out_dir
+
+    if extra_args is not None:
+        cmd = cmd + ' ' + extra_args
+
+    print(cmd)
+    if do_wet:
+        os.system(cmd)
+
+    time.sleep(1) 
