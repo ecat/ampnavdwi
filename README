@@ -1,5 +1,6 @@
-Code and data for paper
+Code and data for:
 
+Lee PK, Zhou X, Hargreaves BA. Diffusion-prepared imaging with amplitude navigation for correction of motion-induced signal loss. Magn Reson Med. 2025;1-17. doi: 10.1002/mrm.30484
 
 1. Create docker container using provided Dockerfile. Most convenient is to use VSCode with DevContainers extensions
 2. Use jupytext to convert main.py to a notebook
